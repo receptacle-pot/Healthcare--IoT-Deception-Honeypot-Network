@@ -1,0 +1,13 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+COPY . /app
+
+ENV PYTHONUNBUFFERED=1
+ENV HONEYPOT_BIND=0.0.0.0
+ENV HONEYPOT_DATA_DIR=/app/data
+
+EXPOSE 8000 8081 2222 2223 1883 2104
+
+CMD ["python", "-m", "src.honeynet"]
+
