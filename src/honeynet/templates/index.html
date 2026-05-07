@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Healthcare IoT Honeypot Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Healthcare IoT Deception</p>
+      <h1>Threat Analysis Dashboard</h1>
+    </div>
+    <div class="status-pill">
+      <span class="pulse"></span>
+      Live
+    </div>
+  </header>
+
+  <main>
+    <section class="metrics" aria-label="Threat summary">
+      <article>
+        <span>Total Events</span>
+        <strong id="total-events">0</strong>
+      </article>
+      <article>
+        <span>Top Source</span>
+        <strong id="top-source">-</strong>
+      </article>
+      <article>
+        <span>Top Service</span>
+        <strong id="top-service">-</strong>
+      </article>
+      <article>
+        <span>Top Technique</span>
+        <strong id="top-technique">-</strong>
+      </article>
+    </section>
+
+    <section class="workspace">
+      <div class="panel wide">
+        <div class="panel-head">
+          <h2>Live Event Stream</h2>
+          <button id="export-json" type="button">Export JSON</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Source</th>
+                <th>Service</th>
+                <th>Event</th>
+                <th>Command / Payload</th>
+                <th>Risk</th>
+              </tr>
+            </thead>
+            <tbody id="event-rows"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Attack Origins</h2>
+        <div id="origin-list" class="stack"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Services Targeted</h2>
+        <div id="service-list" class="stack"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Commands Observed</h2>
+        <div id="command-list" class="stack"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Technique Hints</h2>
+        <div id="technique-list" class="stack"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
+
