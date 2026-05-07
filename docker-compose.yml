@@ -1,0 +1,18 @@
+services:
+  healthcare-iot-honeypot:
+    build: .
+    container_name: healthcare-iot-honeypot
+    restart: unless-stopped
+    environment:
+      HONEYPOT_BIND: 0.0.0.0
+      HONEYPOT_DATA_DIR: /app/data
+    ports:
+      - "8000:8000"
+      - "8081:8081"
+      - "2222:2222"
+      - "2223:2223"
+      - "1883:1883"
+      - "2104:2104"
+    volumes:
+      - ./data:/app/data
+
