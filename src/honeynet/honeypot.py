@@ -17,15 +17,12 @@ def peer(handler: socketserver.BaseRequestHandler) -> tuple[str, int]:
     host, port = handler.client_address[:2]
     return str(host), int(port)
 
-
 def clean_text(data: bytes) -> str:
     return data.decode("utf-8", errors="replace").replace("\x00", "").strip()
-
 
 class ManagedTCPServer(socketserver.ThreadingTCPServer):
     allow_reuse_address = True
     daemon_threads = True
-
     def __init__(self, server_address, handler_cls, store: EventStore):
         self.store = store
         super().__init__(server_address, handler_cls)
