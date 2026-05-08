@@ -7,12 +7,14 @@ DEVICE_PROFILE = {
 }
 
 
+
 FAKE_FILES = {
     "/etc/issue": "MediVitals VXOS 2.3.4\n",
     "/etc/passwd": "root:x:0:0:root:/root:/bin/sh\nservice:x:100:100:Service:/srv:/bin/sh\n",
     "/proc/cpuinfo": "Processor\t: ARMv7 Processor rev 5\nHardware\t: VX-1200 telemetry board\n",
     "/var/log/device.log": "SpO2 sensor recalibrated\nLead II signal quality nominal\n",
 }
+
 
 
 SHELL_RESPONSES = {
