@@ -10,7 +10,6 @@ from typing import Any
 from .analytics import risk_score
 from .geo import enrich_ip
 
-
 class EventStore:
     def __init__(self, data_dir: Path):
         self.data_dir = data_dir
