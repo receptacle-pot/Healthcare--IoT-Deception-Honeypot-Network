@@ -37,10 +37,12 @@ class SSHBannerTrap(socketserver.BaseRequestHandler):
         store: EventStore = self.server.store
         store.add_event(event_type="connection", service="ssh", src_ip=src_ip, src_port=src_port)
         self.request.sendall(b"SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.8\r\n")
+        
         try:
             data = self.request.recv(512)
         except OSError:
             data = b""
+        
         if data:
             store.add_event(
                 event_type="ssh_probe",
@@ -60,6 +62,7 @@ class TelnetMedicalShell(socketserver.BaseRequestHandler):
 
     def read_line(self, limit: int = 2048) -> str:
         data = bytearray()
+        
         while len(data) < limit:
             chunk = self.request.recv(1)
             if not chunk:
