@@ -1,11 +1,8 @@
 from __future__ import annotations
-
 import json
 import time
 from typing import Any
-
 from flask import Flask, Response, jsonify, render_template, request, stream_with_context
-
 from .analytics import summarize
 from .storage import EventStore
 
