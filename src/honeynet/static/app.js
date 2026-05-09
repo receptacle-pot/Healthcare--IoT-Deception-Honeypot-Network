@@ -9,6 +9,7 @@ const commandList = document.querySelector("#command-list");
 const techniqueList = document.querySelector("#technique-list");
 const exportButton = document.querySelector("#export-json");
 
+
 let events = [];
 
 function text(value) {
