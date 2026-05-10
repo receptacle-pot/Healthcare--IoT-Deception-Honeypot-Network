@@ -4,7 +4,7 @@
 
 This project implements a healthcare IoT deception honeypot network that detects reconnaissance, brute-force attempts, suspicious command execution, payload staging, and protocol probing against simulated medical devices.
 
-## Key Indicators Captured
+### Key Indicators Captured
 
 - Source IP address and source port
 - Targeted service
@@ -15,7 +15,7 @@ This project implements a healthcare IoT deception honeypot network that detects
 - MQTT and DICOM probe bytes
 - Offline geolocation and internal/public classification
 
-## Example Findings
+### Example Findings
 
 | Observation | Security Meaning |
 | --- | --- |
@@ -25,7 +25,7 @@ This project implements a healthcare IoT deception honeypot network that detects
 | Internal RFC1918 source IP | Possible compromised internal host or scanner |
 | MQTT connect packet | Reconnaissance against telemetry infrastructure |
 
-## Operational Workflow
+### Operational Workflow
 
 1. Start the honeypot network in Docker or directly with Python.
 2. Monitor the dashboard for source IPs, targeted services, and high-risk commands.
@@ -33,7 +33,7 @@ This project implements a healthcare IoT deception honeypot network that detects
 4. Review payload URLs and command patterns before updating firewall, EDR, or segmentation controls.
 5. Use the report output as evidence of proactive monitoring for compliance discussions.
 
-## HIPAA-Oriented Control Narrative
+### HIPAA-Oriented Control Narrative
 
 The honeypot provides evidence for proactive technical safeguards by detecting unauthorized access attempts before they reach real clinical systems. It supports network segmentation validation because any interaction with hidden deception assets can indicate scanning, misconfiguration, or lateral movement.
 
