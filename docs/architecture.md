@@ -21,7 +21,7 @@ flowchart LR
   Flask --> Dashboard["Realtime dashboard"]
 ```
 
-## Components
+### Components
 
 | Component | Technology | Purpose |
 | --- | --- | --- |
@@ -31,11 +31,11 @@ flowchart LR
 | Frontend | HTML, CSS, JavaScript | Live threat dashboard for researchers and administrators |
 | Containerization | Docker Compose | Isolated, repeatable lab deployment |
 
-## Deception Profile
+### Deception Profile
 
 The default simulated asset is `MediVitals VX-1200`, a fictional patient vitals monitor located in `ICU-West-3`. It exposes common attacker magnets: old SSH banners, Telnet maintenance access, a weak web login panel, MQTT telemetry, and DICOM-like imaging traffic.
 
-## Safety Boundary
+### Safety Boundary
 
 The shell is fake. Commands are parsed, logged, and answered with static responses. URLs and upload attempts are saved as indicators, but no downloaded content is executed. The deployment should still be treated as hostile-facing infrastructure and placed in a segmented lab network.
 
